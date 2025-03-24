@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site 2º EMTI</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .topo, .rodape {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+        }
+
+        .conteudo {
+            flex: 1;
+            width: 90%;
+            text-align: center;
+            border: 1px solid black;
+            padding: 20px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="topo">
+        <button onclick="carregarConteudo('AMC')">AMC</button>
+        <button onclick="carregarConteudo('PROGWEB')">PROG WEB</button>
+        <button onclick="carregarConteudo('HTMLCSS')">HTML/CSS</button>
+        <button onclick="carregarConteudo('POOJAVA')">POO JAVA</button>
+        <button onclick="carregarConteudo('SO')">S.O</button>
+        <button onclick="carregarConteudo('LOGPR')">LOGPR</button>
+        <button onclick="carregarConteudo('NR')">N.R</button>
+    </div>
+    
+    <div class="conteudo" id="conteudo">
+        <h1>Escolha o conteúdo desejado</h1>
+    </div>
+
+    <div class="rodape">
+        <p>Made by Felipe - 2º Ano EMTI | 0.1 ALPHA</p>
+        <button onclick="carregarConteudo('changelog')">changelog</button>
+    </div>
+
+    <script>
+        // Função para carregar conteúdo dinamicamente
+        function carregarConteudo(opcao) {
+            const conteudo = {
+                AMC: "<h2>Conteúdo de AMC</h2><p>Aqui está o material de AMC.</p>",
+                PROGWEB: "<h2>Conteúdo de PROGWEB</h2><p>Aqui está o material de Programação Web.</p>",
+                HTMLCSS: "<h2>Conteúdo de HTML/CSS</h2><p>Aqui está o material de HTML e CSS.</p>",
+                POOJAVA: "<h2>Conteúdo de POO JAVA</h2><p>Aqui está o material de Programação Orientada a Objetos com Java.</p>",
+                SO: "<h2>Conteúdo de S.O</h2><p>Aqui está o material de Sistemas Operacionais.</p>",
+                LOGPR: "<h2>Conteúdo de LOGPR</h2><p>Aqui está o material de Lógica de Programação.</p>",
+                NR: "<h2>Conteúdo de N.R</h2><p>Aqui está o material de Normas Regulamentadoras.</p>",
+                changelog:"<h2>teste</h2>",
+            };
+
+            // Insere o conteúdo correspondente na div de conteúdo
+            const divConteudo = document.getElementById('conteudo');
+            divConteudo.innerHTML = conteudo[opcao] || "<h2>Conteúdo não encontrado!</h2>";
+        }
+    </script>
+</body>
+</html>
